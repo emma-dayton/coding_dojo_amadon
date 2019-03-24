@@ -1,3 +1,11 @@
+## Coding Dojo Amadon Assignment
+The original code, including the below README text, can be found at:
+https://github.com/tehtertot/amadon
+
+In this assignment I will be attempting to do correct the poor code designed by
+the instructor.
+
+
 ## Welcome to Amadon
 There are some serious issues with this code! Follow the instructions below to understand what those issues are, and then figure out how to resolve them.
 
