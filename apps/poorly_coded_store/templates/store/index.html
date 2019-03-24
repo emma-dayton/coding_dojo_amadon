@@ -1,20 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Amadon</title>
-</head>
-<body>
+{% extends "store/layout.html" %}
+  {% block content %}
     <h1>Amadon Store!</h1>
-    <table>
+    <table class="table">
         <thead>
             <tr>
-                <th>Item</th>
-                <th>Price</th>
-                <th>Quantity</th>
-                <th>Actions</th>
+                <th scope="col">Item</th>
+                <th scope="col">Price</th>
+                <th scope="col">Quantity</th>
+                <th scope="col">Actions</th>
             </tr>
         </thead>
         <tbody>
@@ -23,17 +16,16 @@
                 <form action="/checkout" method="post">
                     {% csrf_token %}
                     <td>{{product.description}}</td>
-                    <td><input type="hidden" name="price" value="{{product.price}}">{{product.price}}</td>
-                    <td><select name="quantity">
-                        <option value="1">1</option>              
-                        <option value="2">2</option>              
-                        <option value="3">3</option>              
+                    <td><input type="hidden" name="prod_id" value="{{product.id}}">{{product.price}}</td>
+                    <td><select name="quantity" class="form-control">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
                     </select></td>
-                    <td><input type="submit" value="Buy!"></td>
+                    <td><input type="submit" class="btn btn-outline-success"value="Buy!"></td>
                 </form>
             </tr>
             {% endfor %}
         </tbody>
     </table>
-</body>
-</html>
+  {% endblock %}

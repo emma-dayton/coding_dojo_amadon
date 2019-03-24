@@ -3,5 +3,6 @@ from . import views
 
 urlpatterns = [
     url(r'^$', views.index),
-    url(r'^checkout$', views.checkout)
+    url(r'^checkout$', views.checkout),
+    url(r'^order$', views.checkout_screen)
 ]
